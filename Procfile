@@ -1,1 +1,1 @@
-web: gunicorn app:newscurator
+web: gunicorn newscurator:app
