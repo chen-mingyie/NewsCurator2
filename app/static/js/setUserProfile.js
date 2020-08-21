@@ -21,7 +21,7 @@ function convertJson() {
     xmlhttp.send(userProfileObjectJson);
     xmlhttp.onreadystatechange = function()
     {
-        console.log("test");
+        console.log("Entered");
         if (xmlhttp.readyState == 4)
         {
             var obj = JSON.parse(xmlhttp.responseText);
