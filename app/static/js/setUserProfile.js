@@ -23,12 +23,11 @@ function convertJson() {
         console.log("test");
         if (xmlhttp.readyState == 4) {
             var obj = JSON.parse(xmlhttp.responseText);
-            console.log(obj['userId']);
-            //window.location.href = "http://localhost:5000/newsarticles?id="+ obj['userId'];
-            console.log(window.location.href)
+            console.log('userid=' + obj['userId']);
+            //getArticleApi = "http://localhost:5000/newsarticles?id="+ obj['userId'];
             getArticleApi = "https://mr-ay2021-newscurator.herokuapp.com/newsarticles?id="+ obj['userId'];
-            console.log(getArticleApi)
-            window.location.href = getArticleApi
+            console.log(getArticleApi);
+            window.location.href = getArticleApi;
         }
     };
 }
