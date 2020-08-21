@@ -19,9 +19,11 @@ function convertJson() {
     xmlhttp.open("POST", "/userPreferences");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.send(userProfileObjectJson);
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function()
+    {
         console.log("test");
-        if (xmlhttp.readyState == 4) {
+        if (xmlhttp.readyState == 4)
+        {
             var obj = JSON.parse(xmlhttp.responseText);
             console.log('userid=' + obj['userId']);
             //getArticleApi = "http://localhost:5000/newsarticles?id="+ obj['userId'];
