@@ -2,7 +2,6 @@ from app import app
 from flask import request, Markup, render_template, jsonify, session
 from app.business import cf_data
 from app.model.user_preferences import UserPreferences, UserPreferencesSchema
-from app.model.user_preferences import UserPreferences, UserPreferencesSchema
 from app.model.topics import Topics
 from app.model.news_topics import NewsTopics
 from app.model.interest_levels import InterestLevels
