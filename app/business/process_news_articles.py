@@ -13,6 +13,7 @@ class ProcessNewsArticles:
     def __init__(self):
         self.__userProfilesDB = {}
         self.__keywordMatcher = None
+        self.__newsapiKey = 'fd9342e6dd8e4a0b97bab8e760382743' #'7580ffe71bec47f7acfe7ea22d3520cc'
 
     def calculateAgeOfNews(self, currentHeadlines):
         publishedAt = currentHeadlines["publishedAt"].split('T')[0]
@@ -40,7 +41,7 @@ class ProcessNewsArticles:
         return articles
 
     def fetchTrendingStories(self):
-        newsapi = NewsApiClient(api_key='7580ffe71bec47f7acfe7ea22d3520cc')
+        newsapi = NewsApiClient(api_key = self.__newsapiKey)
         articles=[]
         pytrend = TrendReq()
         df = pytrend.trending_searches()
@@ -56,7 +57,7 @@ class ProcessNewsArticles:
         # this is sample to download from one source
         articles = []
         self.__keywordMatcher = KeywordMatcher(Countries.getCountries()[user_preferences.country])
-        newsapi = NewsApiClient(api_key='7580ffe71bec47f7acfe7ea22d3520cc')
+        newsapi = NewsApiClient(api_key = self.__newsapiKey)
         print(user_preferences.topics[0].topic_name)
         
         for index, topic in enumerate(user_preferences.topics):

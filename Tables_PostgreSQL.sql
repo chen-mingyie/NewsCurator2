@@ -16,5 +16,3 @@ delete from news_source_preferences;
 delete from topic_preferences;
 
 delete from users;
-
-delete from sqlite_sequence
