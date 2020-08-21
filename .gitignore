@@ -1,2 +1,4 @@
 /venv/
 /requirements_all.txt
+/Dockerfile
+/.dockerignore
