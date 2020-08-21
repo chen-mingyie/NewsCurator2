@@ -7,7 +7,6 @@ from app.model.user_preferences import UserPreferences
 from app.model.countries import Countries
 from datetime import datetime, date
 from typing import Dict
-import pandas as pd
 from pytrends.request import TrendReq
 
 class ProcessNewsArticles:
