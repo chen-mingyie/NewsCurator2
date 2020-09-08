@@ -26,7 +26,7 @@ function convertJson() {
         {
             var obj = JSON.parse(xmlhttp.responseText);
             console.log('userid=' + obj['userId']);
-            //getArticleApi = "http://localhost:5000/newsarticles?id="+ obj['userId'];
+//            getArticleApi = "http://localhost:5000/newsarticles?id="+ obj['userId'];
             getArticleApi = "https://mr-ay2021-newscurator.herokuapp.com/newsarticles?id="+ obj['userId'];
             console.log(getArticleApi);
             window.location.href = getArticleApi;

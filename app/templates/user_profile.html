@@ -29,9 +29,9 @@
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/userProfile">Your Profile</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" onclick="showLoading('', 'mainform')" href="/newsarticles">Your Work Reads</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" onclick="showLoading('', '')" href="/#">Your Leisure Reads</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Placeholder Dropdown </a>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" onclick="showLoading('', 'mainform')" href="/newsarticles">Your Work Reads</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" onclick="showLoading('', '')" href="/#">Your Leisure Reads</a></li>
+                    <li class="nav-item dropdown" style="display: none;"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Placeholder Dropdown </a>
                         <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                     </li>
                 </ul>
@@ -58,7 +58,7 @@
             <div><strong>Scouring The Web For Your Articles</strong></div>
         </div>
     </div>
-    <form id="mainform" onSubmit="convertJson()" action="" method="">
+    <form id="mainform" onSubmit="return (showLoading('saveProfileBtn', 'mainform') && convertJson())" action="" method="">
         <div class="table-responsive" style="margin-top: 20px;">
             <table class="table table-sm">
                 <thead class="text-uppercase">
@@ -187,10 +187,10 @@
                 <tbody id="newsSourceTable"></tbody>
             </table>
         </div>
-        <button id="saveProfileBtn" class="btn btn-primary" onclick="showLoading('saveProfileBtn', 'mainform')" type="submit" style="float: right;margin-right: 5px;" name="submitBtn" value="save">Save</button>
+        <button id="saveProfileBtn" class="btn btn-primary" onclick="" type="submit" style="float: right;margin-right: 5px;" name="submitBtn" value="save">Save</button>
 <!--        <button class="btn btn-primary" type="submit" style="float: right;margin-right: 5px;" name="submitBtn" value="saveAndSubmit">Save</button>-->
         <div class="custom-control custom-control-inline custom-switch" style="float: right;margin-top: 5px;">
-            <input class="custom-control-input" type="checkbox" id="formCheck-1" name="fetchArticles" value="true" checked="">
+            <input class="custom-control-input" type="checkbox" id="formCheck-1" name="fetchArticles" value="true" checked="" disabled>
             <label class="custom-control-label" for="formCheck-1">Fetch Articles on Save</label>
         </div>
     </form>
