@@ -21,15 +21,13 @@ function convertJson() {
     xmlhttp.send(userProfileObjectJson);
     xmlhttp.onreadystatechange = function()
     {
-        console.log("Entered");
         if (xmlhttp.readyState == 4)
         {
             var obj = JSON.parse(xmlhttp.responseText);
-            console.log('userid=' + obj['userId']);
-//            getArticleApi = "http://localhost:5000/newsarticles?id="+ obj['userId'];
-            getArticleApi = "https://mr-ay2021-newscurator.herokuapp.com/newsarticles?id="+ obj['userId'];
-            console.log(getArticleApi);
-            window.location.href = getArticleApi;
+            url = window.location.protocol + "//" + window.location.host + "/newsarticles?id="+ obj['userId'];
+            console.log(url);
+//            getArticleApi = "https://mr-ay2021-newscurator.herokuapp.com/newsarticles?id="+ obj['userId'];
+            window.location.href = url;
         }
     };
 }

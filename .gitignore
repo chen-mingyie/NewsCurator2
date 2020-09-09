@@ -2,3 +2,4 @@
 /requirements_all.txt
 /Dockerfile
 /.dockerignore
+/app/model/UserPreferences.sqlite3-journal

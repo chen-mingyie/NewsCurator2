@@ -34,7 +34,7 @@ def showUserProfile():
                            srcPref=Markup(source_preferences), countries=Markup(Countries.getCountries()),
                            userprofile=Markup(userprofileJson), userEmail=app.newsapp_active_user)
 
-@app.route("/newsarticles", methods = ["GET"])
+@app.route("/newsarticles", methods = ["GET", "POST"])
 def showNewsArticles():
         user_id = request.args.get('id')
         user_profile = UserPreferences.query.filter_by(id=user_id).first()

@@ -33,10 +33,14 @@ class ProcessNewsArticles:
             article = NewsArticle(i, currentHeadlines["url"], currentHeadlines["title"], currentHeadlines["description"], currentHeadlines["source"]["name"],
                                   topic_name, daysOld, isTrendingNews, isLocalNews, currentHeadlines["content"])
             article.processArticle()
+
             # shifted this to rankNewsArticles() so that only the top 10 articles will be downloaded,
             # this improves speed but its traded off with articles tagged using truncated content
+            # ------------------------------------------------------------------------------------------
             matchScore = self.__keywordMatcher.computeMatchingScore(article.content)
             article.isLocalNews = (matchScore > 0.002)
+            # ------------------------------------------------------------------------------------------
+
             articles.append(article)
         return articles
 
